@@ -1,29 +1,30 @@
-######################################################
-#
-# EnergyScope TD : LP modeling framework
-# Model file
-# Author: Gauthier LIMPENS & Stefano MORET
-# Date: 13.02.2019
-# Model documentation: Limpens G. (2019). "XXXX". 
-# For terms of use and how to cite this work please check the ReadMe file. 
-#
-######################################################
-
-																																		
-# UNIT MEASURES:																									
-# Unless otherwise specified units are:																									
-# Energy [GWh], Power [GW], Cost [MCHF], Time [h], Passenger transport [Mpkm], Freight Transport [Mtkm]																									
-			 				
-# -----------------------------------													
-# SETS and parameters depending on TD													
-# -----------------------------------											
-												
+# -------------------------------------------------------------------------------------------------------------------------													
+#	EnergyScope TD is an open-source energy model suitable for country scale analysis. It is a simplified representation of an urban or national energy system accounting for the energy flows												
+#	within its boundaries. Based on a hourly resolution, it optimises the design and operation of the energy system while minimizing the cost of the system.												
+#													
+#	Copyright (C) <2018-2019> <Ecole Polytechnique Fédérale de Lausanne (EPFL), Switzerland and Université catholique de Louvain (UCLouvain), Belgium>
+#													
+#	Licensed under the Apache License, Version 2.0 (the "License");												
+#	you may not use this file except in compliance with the License.												
+#	You may obtain a copy of the License at												
+#													
+#		http://www.apache.org/licenses/LICENSE-2.0												
+#													
+#	Unless required by applicable law or agreed to in writing, software												
+#	distributed under the License is distributed on an "AS IS" BASIS,												
+#	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.												
+#	See the License for the specific language governing permissions and												
+#	limitations under the License.												
+#													
+#	Description and complete License: see LICENSE file.												
+# -------------------------------------------------------------------------------------------------------------------------													
+# SETS depending on TD													
+# --------------------------													
+# Diminuer valeur (vers)													
 param peak_sh_factor	:=	1.10											
 ;													
 													
-## SETS [Figure 1.3]													
-# modified for typical days													
-# set PERIODS := 1 .. 8760;													
+#SETS [Figure 3]													
 set T_H_TD := 													
 (	1	,	1	,	10	)							
 (	2	,	2	,	10	)							
@@ -8792,8 +8793,8 @@ set T_H_TD :=
 # -----------------------------													
 													
 													
-# INPUT of 8 TD distributions (begin) : 													
-param heating_time_serie : 	1	2	3	4	5	6	7	8	9	10	11	12	:=
+# INPUT of 12 TD distributions : 													
+param heating_time_series: 	1	2	3	4	5	6	7	8	9	10	11	12	:=
 1	0.0003492	0.000442495	0.000172686	0.000129666	0.000220038	0	1.68152E-05	4.298E-05	0.000110724	0.000289758	0.000342954	0.000170671	
 2	0.000357059	0.000462443	0.000183466	0.00013964	0.000253085	0	3.4114E-05	6.69384E-05	0.000116366	0.000301948	0.000386478	0.000181653	
 3	0.000305777	0.00039484	0.000158379	0.000124023	0.00023233	0	3.20184E-05	6.9971E-05	0.0001075	0.000258827	0.000349099	0.000156767	
@@ -8820,7 +8821,7 @@ param heating_time_serie : 	1	2	3	4	5	6	7	8	9	10	11	12	:=
 24	0.000338823	0.000374086	0.00019334	9.79493E-05	0.000214497	0	0	4.08643E-05	8.58392E-05	0.000272429	0.000383657	0.00023636	
 ;													
 													
-param electricity_time_serie :	1	2	3	4	5	6	7	8	9	10	11	12	:=
+param electricity_time_series :	1	2	3	4	5	6	7	8	9	10	11	12	:=
 1	9.29769E-05	8.75988E-05	8.78357E-05	9.32927E-05	8.84179E-05	9.63025E-05	8.96119E-05	9.68452E-05	9.40723E-05	8.36812E-05	0.000105983	9.65985E-05	
 2	8.87238E-05	8.3395E-05	8.33161E-05	8.8635E-05	8.29016E-05	9.30756E-05	8.47075E-05	9.08652E-05	9.01251E-05	8.05826E-05	0.000100358	9.07369E-05	
 3	9.08652E-05	8.81613E-05	8.48555E-05	8.82106E-05	8.34444E-05	8.96711E-05	8.02669E-05	8.56252E-05	8.71548E-05	8.39772E-05	0.000100457	8.98093E-05	
@@ -8847,7 +8848,7 @@ param electricity_time_serie :	1	2	3	4	5	6	7	8	9	10	11	12	:=
 24	9.32138E-05	0.000105095	0.000101148	9.95688E-05	9.1477E-05	0.000100457	9.31644E-05	0.000101937	0.000100654	9.98648E-05	0.000106082	0.000101444	
 ;													
 													
-param mob_pass_time_serie :	1	2	3	4	5	6	7	8	9	10	11	12	:=
+param mob_pass_time_series :	1	2	3	4	5	6	7	8	9	10	11	12	:=
 1	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	5.8742E-06	
 2	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	2.34968E-06	
 3	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	1.17484E-06	
@@ -8874,7 +8875,7 @@ param mob_pass_time_serie :	1	2	3	4	5	6	7	8	9	10	11	12	:=
 24	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	9.39872E-06	
 ;													
 													
-param mob_freight_time_serie :	1	2	3	4	5	6	7	8	9	10	11	12	:=
+param mob_freight_time_series:	1	2	3	4	5	6	7	8	9	10	11	12	:=
 1	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	
 2	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	
 3	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	0.000114155	

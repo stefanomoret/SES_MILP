@@ -1,13 +1,14 @@
 # Acknowledging authorship #
 In the academic spirit of collaboration, the source code should be appropriately acknowledged in the resulting scientific disseminations.  
 You may cite it as follows: 
-- [1], for reference to the Swiss-EnergyScope project or the online version of the calculator energyscope.ch
-- [2], for reference to the MILP modeling framework
-- [3], for reference to the MILP modeling framework and the data for the application to the Swiss energy system
-- [5], for reference to the LP modeling framework (hourly)
+- [1], for reference to the origins of the EnergyScope project or to the first online version of the calculator energyscope.ch  
+- [2], for reference to the energyscope MILP modeling framework  
+- [3], for reference to this specific release of the model (v1 monthly MILP) 
+- [5], for reference to the LP modeling framework (hourly)  (Present version)
 
 References:  
-[1] V. Codina Gironès, S. Moret, F. Maréchal, D. Favrat (2015). Strategic energy planning for large-scale energy systems: A modelling framework to aid decision-making. Energy, 90(PA1), 173–186. https://doi.org/10.1016/j.energy.2015.06.008  
-[2] S. Moret, M. Bierlaire, F. Maréchal (2016). Strategic Energy Planning under Uncertainty: a Mixed-Integer Linear Programming Modeling Framework for Large-Scale Energy Systems. https://doi.org/10.1016/B978-0-444-63428-3.50321-0  
-[3] S. Moret, V. Codina Gironès, M. Bierlaire, F. Maréchal (2017). Characterization of input uncertainties in strategic energy planning models. Applied Energy 202, 597–617. https://doi.org/10.1016/j.apenergy.2017.05.106  
-[5] G. Limpens, S . Moret, H. Jeanmart, F. Maréchal (2019). EnergyScope TD: an open-source model for national energy systems. (Under revision)
+[1] V. Codina Gironès, S. Moret, F. Maréchal, D. Favrat (2015). Strategic energy planning for large-scale energy systems: A modelling framework to aid decision-making. Energy, 90(PA1), 173-186. https://doi.org/10.1016/j.energy.2015.06.008   
+[2] S. Moret, M. Bierlaire, F. Maréchal (2016). Strategic Energy Planning under Uncertainty: a Mixed-Integer Linear Programming Modeling Framework for Large-Scale Energy Systems. https://doi.org/10.1016/B978-0-444-63428-3.50321-0    
+[3] S. Moret (2017). Strategic Energy Planning under Uncertainty. PhD Thesis n. 7961, EPFL, Switzerland. http://dx.doi.org/10.5075/epfl-thesis-7961  
+[4] S. Moret (2017). Strategic Energy Planning under Uncertainty. PhD Thesis n. 7961, EPFL, Switzerland. http://dx.doi.org/10.5075/epfl-thesis-7961  
+[5] G. Limpens, S . Moret, H. Jeanmart, F. Maréchal (2019). EnergyScope TD: a novel open-source model for regional energy systems and its application to the case of Switzerland. (Under revision)   
